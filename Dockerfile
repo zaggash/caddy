@@ -12,7 +12,8 @@ RUN \
     git checkout -b "v$CADDY_VERSION" && \
     
   # Disable Telemetry
-  sed -i -e 's#EnableTelemetry = true#EnableTelemetry = false#' /go/src/github.com/mholt/caddy/caddy/caddymain/run.go
+  sed -i -e 's#EnableTelemetry = true#EnableTelemetry = false#' /go/src/github.com/mholt/caddy/caddy/caddymain/run.go && \
+  echo ">> Telemetry : Disabled"
 
 # import plugins
 #COPY plugins.go /go/src/github.com/mholt/caddy/caddyhttp/plugins.go
